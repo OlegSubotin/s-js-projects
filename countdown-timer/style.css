@@ -5,7 +5,9 @@
 }
 
 body{
-    background-color: darkblue;
+    background-image: url('./sky.jpg');
+        background-size: cover;
+        background-position: center center;
     font-family: "Poppins", sans-serif;
     margin: 0 0 3rem;
     min-height: 100vh;
@@ -44,4 +46,32 @@ a{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.title{
+        font-weight: bold;
+        
+        line-height: 2;
+        margin: 10px 15px;}
+
+.timer-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+span{
+    text-align: center;
+}
+
+.text{
+    font-weight: bold;
+    font-size: 84px;
+    line-height: 1;
+    margin: 10px 15px;
+}
+
+.time-wrap{
+    text-align: center;
 }
