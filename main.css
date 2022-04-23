@@ -31,14 +31,14 @@ li {
     text-align: center;
 }
 
-li a {
+a {
     padding: 7px;
     color: #fff;
     font-size: 1.2rem;
     text-decoration: none;
 }
 
-li a:hover {
+a:hover {
     color: red;
 }
 
