@@ -50,7 +50,7 @@ const refs = {
     submitBtn: document.getElementById('button'),
     answer: document.querySelectorAll('.answer'),
     quizWrapper: document.querySelector('.wrapper'),
-}
+};
 
 let questionData = 0;
 let score = 0;
@@ -74,7 +74,7 @@ function updateRadioSelect(){
     refs.answer.forEach(ans => {
         ans.checked = false;
     });
-}
+};
 
 function selectedVariant() {
     let answer = undefined;
@@ -86,7 +86,7 @@ function selectedVariant() {
     });
     
     return answer;
-}
+};
 
 function onSubmitBtnClick() {
     let answer = selectedVariant();
@@ -94,12 +94,12 @@ function onSubmitBtnClick() {
     if (answer === undefined) {
         alert("Please choose your variant");
         return;
-    }
+    };
 
     if (answer === questionsData[questionData].correct) {
 
         score += 1;
-    }
+    };
 
     questionData += 1;
 
@@ -108,6 +108,6 @@ function onSubmitBtnClick() {
     } else {
         refs.quizWrapper.innerHTML = 
             `<h2 class="question">Quiz is finished. Your result is ${score} / ${questionsData.length}</h2>
-<button class="button" onclick="location.reload()">Reload</button>`
+            <button class="button" onclick="location.reload()">Reload</button>`
     };
-}
+};
