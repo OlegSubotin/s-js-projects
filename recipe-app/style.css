@@ -9,6 +9,7 @@ body{
     font-family: "Poppins", sans-serif;
     margin: 0 0 3rem;
     min-height: 100vh;
+
 }
 
 ul {
@@ -44,4 +45,111 @@ a{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #2a2a72;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+    width: 400px;
+    margin: 0 auto;
+    border-radius: 8px;
+    /* transform: scale(1.5); */
+}
+
+.top-section{
+    display: flex;
+    margin: 20px;
+}
+
+.input{
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+}
+
+.input:focus {
+    background-color: rgb(231, 238, 240);
+}
+
+.btn-search{
+    width: 40px;
+    margin-left: 7px;
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+    fill: aquamarine;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.favorite-section{
+    margin-bottom: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 380px;
+    background-color: #eec0c6;
+    background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);
+}
+
+.title{
+    margin: 10px auto;
+    font-size: large;
+}
+
+.list{
+    margin: 0;
+    display: flex;
+}
+
+.item{
+    margin: 5px;
+}
+
+.image{
+    border-radius: 50%;
+    border: 2px solid #7ee8fa;
+    object-fit: cover;
+}
+
+.suggest-section{
+    border-radius: 20px;
+    width: 380px;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.suggest-image{
+    border-radius: 10px;
+    border: 2px solid #7ee8fa;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.suggest-section-text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.meal-name {
+    margin-left: 12px;
+}
+
+.heart-btn{
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    fill: aquamarine;
+    border: none;
+    cursor: pointer;
+}
+
+.heart-btn:focus,
+.heart-btn:hover{
+    fill: red;
 }
