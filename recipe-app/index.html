@@ -15,7 +15,7 @@
         <div class="top-section">
             <input type="text" id="input" class="input" placeholder="search your dish">
             <button class="btn-search" id="search-btn">
-                <svg class="search-icon" width="16" height="12">
+                <svg class="search-icon" width="16" height="16">
                     <use href="img/sprite.svg#icon-search"></use>
                 </svg>
             </button>
@@ -23,8 +23,8 @@
 
         <div class="favorite-section">
             <h2 class="title">Favorite meals</h2>
-            <ul class="list">
-                <li class="item"><img src="img/george-zheng-0Kbjfwunink-unsplash.jpg" class="image" alt="meal" width=70 height=70>
+            <ul class="list" id="favorite-list">
+                <!-- <li class="item"><img src="img/george-zheng-0Kbjfwunink-unsplash.jpg" class="image" alt="meal" width=70 height=70>
                 <span class="meal-description" id="meal-description">this meal</span>
                 </li>
                 <li class="item"><img src="img/max-griss-I90KYtZDi54-unsplash.jpg" class="image" alt="meal" width=70 height=70>
@@ -35,13 +35,13 @@
                 </li>
                 <li class="item"><img src="img/mae-mu-H5Hj8QV2Tx4-unsplash.jpg" class="image" alt="meal" width=70 height=70>
                 <span class="meal-description" id="meal-description">this meal</span>
-                </li>
+                </li> -->
                 
             </ul>
         </div>
 
-        <div class="suggest-section">
-            <h2 class="title">Suggest meal</h2>
+        <div class="suggest-section" id="suggest-meal">
+            <!-- <h2 class="title">Suggest meal</h2>
             <img class="suggest-image" src="img/irene-kredenets-6unxGRCPg0U-unsplash.jpg" alt="meal" width=380 height=159>
             <div class="suggest-section-text">
             <p class="meal-name">meal name</p>
@@ -50,11 +50,36 @@
                     <use href="img/sprite.svg#icon-heart"></use>
                 </svg>
             </button>
+            </div> -->
+        </div>
+
+
+        <div class="popup-container hidden" id="popup">
+            <div  id="meal-info">
+                
+                <button class="popup-btn-clear" id="popup-clear-btn">
+                    <svg class="clear-icon" width="16" height="16">
+                        <use href="img/sprite.svg#icon-cross"></use>
+                    </svg>
+                </button>
+                    
+
+
+                    <div id="popup-meal-description"></div>
+                    <!-- <h3>meal title</h3>
+                <img class="popup-image" src="img/khloe-arledge-ND3edEmzcdQ-unsplash.jpg" width=500 height=380 alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint officia architecto quidem sequi dolorum obcaecati quisquam quis laborum consectetur unde!</p>
+                <ul>
+                    <li>1 ingridient</li>
+                    <li>2 ingridient</li>
+                    <li>3 ingridient</li>
+                </ul> -->
             </div>
+        </div>
         </div>
     
     </div>
 
-    <script src="app.js" type="module"></script>
+    <script src="app.js" ></script>
 </body>
 </html>

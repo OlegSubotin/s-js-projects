@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
 
-* {
+*{
     box-sizing: border-box;
 }
 
@@ -24,6 +24,10 @@ li {
 
 a{
     text-decoration: none;
+}
+
+img{
+    cursor: pointer;
 }
 
 .goback-link{
@@ -82,7 +86,7 @@ a{
 }
 
 .favorite-section{
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -100,10 +104,19 @@ a{
 .list{
     margin: 0;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .item{
-    margin: 5px;
+    width: 75px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 7px;
+    position: relative;
+    /* border: 3px solid #2a2a72; */
 }
 
 .image{
@@ -112,15 +125,33 @@ a{
     object-fit: cover;
 }
 
+.meal-description{
+    font-size: small;
+    display: inline-block;
+    /* flex-wrap: wrap; */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 75px;
+}
+.meal-description:hover{
+    display: flex;
+    flex-wrap: wrap;
+    white-space: normal;
+    text-overflow: inherit;
+    overflow: visible;
+}
+
 .suggest-section{
-    border-radius: 20px;
     width: 380px;
+}
+
+.meal{
     padding-left: 15px;
     padding-right: 15px;
     display: flex;
     flex-direction: column;
 }
-
 
 .suggest-image{
     border-radius: 10px;
@@ -149,7 +180,89 @@ a{
     cursor: pointer;
 }
 
-.heart-btn:focus,
-.heart-btn:hover{
+.heart-btn.active{
     fill: red;
+}
+
+.btn-clear{
+    padding: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    fill: #009ffd;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.btn-clear:hover{
+    fill: aquamarine;
+    background-color: #009ffd;
+}
+
+.popup-container{
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.popup-container.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.meal-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #fff;
+    border-radius: 5px;
+    padding:  25px;
+    position: relative;
+    overflow: auto;
+    max-height: 80vh;
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+}
+
+.popup-btn-clear {
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    fill: #009ffd;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.popup-btn-clear:hover {
+    fill: aquamarine;
+    background-color: #009ffd;
+}
+
+.popup-image{
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid #009ffd;
 }
