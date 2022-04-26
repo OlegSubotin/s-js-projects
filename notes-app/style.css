@@ -41,7 +41,31 @@ a{
     padding-left: 30px;
     padding-right: 30px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
+}
+
+.note{
+    margin: 1rem;
+}
+
+.wrapper{
+    padding: 25px;
+    border: none;
+    border-radius: 20px;
+    width: 300px;
+    height: 300px;
+    background-color: #9e8fb2;
+    background-image: linear-gradient(315deg, #9e8fb2 0%, #a7acd9 74%);
+    display: flex;
+    flex-direction: column;
+}
+
+.text{
+    font-family: inherit;
+    height: 100%;
+    width: 100%;
 }
