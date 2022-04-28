@@ -1,26 +1,31 @@
-const addBtnEl = document.getElementById('add-btn');
-const sectionEl = document.querySelector('.section');
+const notesContainer = document.querySelector(".section");
+const addNoteButton = document.getElementById("add-btn");
 
-const notes = JSON.parse(localStorage.getItem('notes'));
+getNotes().forEach((note) => {
+  const noteElement = createNoteElement(note.id, note.content);
+  notesContainer.appendChild(noteElement);
+});
 
-if (notes) {
-    notes.forEach(note => {
-        addNewNote(note);
-    });
+addNoteButton.addEventListener("click", () => addNote());
 
+function getNotes() {
+  return JSON.parse(localStorage.getItem("stickynotes-notes") || "[]");
 };
 
-addBtnEl.addEventListener('click', addNewNote);
+function saveNotes(notes) {
+  localStorage.setItem("stickynotes-notes", JSON.stringify(notes));
+};
 
-function addNewNote(text ='') {
-    const note = document.createElement('div');
-    note.classList.add('wrapper');
-    note.innerHTML = `
+function createNoteElement(id, content) {
+    const wrapper = document.createElement("div");
+    wrapper.classList.add("wrapper");
+    wrapper.innerHTML=  `
                     <div class="tool-bar">
                     <button class="btn " id="edit-btn">
                         <svg class="edit-icon" width="16" height="16">
                             <use href="sprite.svg#icon-edit"></use>
                         </svg>
+                        save/edit
                     </button>
                     <button class="btn " id="delete-btn">
                         <svg class="delete-icon" width="16" height="16">
@@ -28,65 +33,63 @@ function addNewNote(text ='') {
                         </svg>
             
                     </button>
-                </div>
-                <div class="main ${text ? "" : "hidden"}"></div>
-                <textarea id="text" class="${text ? "hidden" : ""} textarea-section"></textarea>
+                </div>               
     `;
 
-    const deleteBtnEl = note.querySelector('#delete-btn');
-    const editBtnEl = note.querySelector('#edit-btn');
-    const mainEl = note.querySelector('.main');
-    const textareaEl = note.querySelector('.textarea-section');
+    const element = document.createElement('textarea');
+    element.classList.add('textarea-section');
+    element.value = content;
+     
+    wrapper.appendChild(element);
 
-
-
-    editBtnEl.addEventListener('click', onEditBtnClick);
-    deleteBtnEl.addEventListener('click', onDeleteBtnClick);
-    textareaEl.addEventListener('input', onTextareaInput);
-
-    textareaEl.value = text;
-    
-    mainEl.innerHTML = marked.parse(JSON.stringify(text));
-
-    function onEditBtnClick() {
-        mainEl.classList.toggle('hidden');
-        textareaEl.classList.toggle('hidden');
-    };
-
-    function onDeleteBtnClick() {
-        note.remove();
-
-        updateLocalStorage();
-    };
-
-    function onTextareaInput(evt) {
-        const { value } = evt.target;
-
-        mainEl.innerHTML = marked.parse(value);
-        
-        updateLocalStorage();
-    };
-    
-    sectionEl.appendChild(note);
-};
-
-function updateLocalStorage() {
-    const notesText = document.querySelectorAll('.textarea-section');
-
-    const notes = [];
-
-    notesText.forEach(note => {
-        notes.push(note.value);
+    const editBtn = wrapper.querySelector('#edit-btn');
+    editBtn.addEventListener('click', () => {
+        updateNote(id, element.value);
     });
 
-    localStorage.setItem('notes', JSON.stringify(notes));
+
+    
+    const deleteBtn = wrapper.querySelector('#delete-btn');
+    deleteBtn.addEventListener('click', () => {
+        const doDelete = confirm(
+            "Are you sure you wish to delete this  note?"
+        );
+        if (doDelete) {
+            deleteNote(id, wrapper);
+        };
+    });
+
+    return wrapper;
 };
 
+function addNote() {
+  const notes = getNotes();
+  const noteObject = {
+    id: Math.floor(Math.random() * 100000),
+    content: ""
+  };
 
+  const noteElement = createNoteElement(noteObject.id, noteObject.content);
+  notesContainer.appendChild(noteElement);
 
+  notes.push(noteObject);
+  saveNotes(notes);
+};
 
+function updateNote(id, newContent) {
+  const notes = getNotes();
+  const targetNote = notes.filter((note) => note.id == id)[0];
 
+  targetNote.content = newContent;
+  saveNotes(notes);
+};
 
+function deleteNote(id, element) {
+  const notes = getNotes().filter((note) => note.id != id);
+
+  saveNotes(notes);
+  notesContainer.removeChild(element);
+};
 
 
 
