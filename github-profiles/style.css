@@ -5,7 +5,8 @@
 }
 
 body{
-    background-color: darkblue;
+    background-color:#7cffcb;
+    background-image: linear-gradient(315deg, #7cffcb 0%, #74f2ce 74%);
     font-family: "Poppins", sans-serif;
     margin: 0 0 3rem;
     min-height: 100vh;
@@ -28,7 +29,7 @@ a{
 .goback-link{
     margin-top: 10px;
     margin-left: 10px;
-    color:aquamarine;
+    color:rgb(87, 24, 22);
     text-decoration: none;
     padding: 10px;
 }
@@ -44,4 +45,38 @@ a{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.form{
+    margin-bottom: 30px;
+    max-width: 400px;
+}
+
+.input{
+    border-radius: 5px ;
+    border: 1px solid rgb(19, 60, 245);
+    padding: 10px 15px;
+    font-size: large;
+    font-weight: 500;
+}
+
+.card{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 16px;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    background-color: #861657;
+        background-image: linear-gradient(326deg, #861657 0%, #ffa69e 74%);
+}
+
+.image{
+    border-radius: 50%;
+    border: 1px solid white;
+    margin-right: 40px;
+}
+
+.text{
+    color: #ffffff;
 }
