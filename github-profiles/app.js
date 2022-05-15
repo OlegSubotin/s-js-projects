@@ -9,6 +9,7 @@ pushFetch('OlegSubotin');
 async function pushFetch(user) {
     const response = await fetch(URL + user);
     const responseData = await response.json();
+    console.log(responseData)
     renderUserCard(responseData);
 };
 
@@ -22,8 +23,8 @@ function renderUserCard(data) {
         </div>
         <div class="info-wrapper">
             <p class="text">Name: ${data.name}</p>
-            <p class="text">Repos:
-            <a style="color:#fff; cursor:pointer; text-decoration:underline;" href="${data.repos_url}">
+            <p class="text">Profile:
+            <a target="blank" style="color:#fff; cursor:pointer; text-decoration:underline;" href="${data.html_url}">
              link</a>
             </p>
             <p class="text">Public repos: ${data.public_repos}</p>
