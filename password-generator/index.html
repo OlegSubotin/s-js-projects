@@ -1,19 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title> Password generator </title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Password generator</title>
+  </head>
+  <body>
     <p><a class="goback-link" href="../index.html"> Go back </a></p>
 
     <div class="section">
-    
+      <div class="wrapper">
+        <span class="password"
+          >lkfjegjkjjjkfukwjkfjweqfuwurghk3rfj,3fkfj,wrj</span
+        >
+        <button type="button" class="copy-btn" id="copy-btn">copy</button>
+
+        <div class="checkbox-wrapper">
+          <ul class="checkbox-list">
+            <li class="checkbox-item">
+              <label for="length">Password Length</label>
+              <input id="length" value="8" type="number" min="4" max="50" />
+            </li>
+            <li class="checkbox-item">
+              <label for="number">Contain Numbers</label>
+              <input id="number" type="checkbox" />
+            </li>
+            <li class="checkbox-item">
+              <label for="symbol">Contain Symbols</label>
+              <input id="symbol" type="checkbox" />
+            </li>
+            <li class="checkbox-item">
+              <label for="upper">Contain Uppercase letters</label>
+              <input id="upper" type="checkbox" />
+            </li>
+            <li class="checkbox-item">
+              <label for="lower">Contain Lowercase letters</label>
+              <input id="lower" type="checkbox" />
+            </li>
+          </ul>
+          <button class="generate-btn" type="button">generate password</button>
+        </div>
+      </div>
     </div>
 
     <script src="app.js" type="module"></script>
-</body>
+  </body>
 </html>
+<!-- <div class="pw-container">
+            <div class="pw-header">
+                <div class="pw">
+                    <span id="pw">l823Zs78#Css09@</span>
+                    <button id="copy">Copy</button>
+                </div>
+            </div>
+            <div class="pw-body">
+                <div class="form-control">
+                    <label for="len">Password Length</label>
+                    <input id="len" value="15" type="number" min="2" max="30" />
+                </div>
+                <div class="form-control">
+                    <label for="upper">Contain Uppercase Letters</label>
+                    <input id="upper" type="checkbox" />
+                </div>
+                <div class="form-control">
+                    <label for="lower">Contain Lowercase Letters</label>
+                    <input id="lower" type="checkbox" />
+                </div>
+                <div class="form-control">
+                    <label for="number">Contain Numbers</label>
+                    <input id="number" type="checkbox" />
+                </div>
+                <div class="form-control">
+                    <label for="symbol">Contain Symbols</label>
+                    <input id="symbol" type="checkbox" />
+                </div>
+                <button class="generate" id="generate">
+                    Generate Password
+                </button>
+            </div>
+        </div> -->
